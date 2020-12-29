@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--Form Validation Start-->
+<script>
+    function validateLoginForm() {
+      var email = document.forms["loginform"]["email"].value;
+      var password = document.forms["loginform"]["password"].value;
+
+      //validate email
+      if (email == "") {
+        alert("Email must be filled out");
+        return false;
+      }
+      if (!email.endsWith('@gmail.com')) {
+        alert("Email must contains@gmail.com");
+        return false;
+        }
+        //validate password
+      if (password == "") {
+        alert("Password must be filled out");
+        return false;
+      }
+        else{
+            alert("Congratulation");
+        return true;
+        }
+    }
+    
+    </script>
+
+	<title>Facebook - log in or sign up</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+		<div class="main">
+			<div class="container">
+				<div class="row justify-content-space-between">
+					<div class="content-left">
+						<h1>facebook</h1>
+                        <h2>Facebook helps you connect and share with the people in your life.</h2>
+                        
+					</div>
+					<div class="content-right">
+						<form  name="loginform" action="" onsubmit="return validateLoginForm()" method="POST">
+							<div class="form-group">
+								<input name="email" type="email" placeholder="Email address or phone number">
+							</div>
+							<div class="form-group">
+								<input name="password" type="password" placeholder="Password"  pattern="^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,12}$">
+							</div>
+							<div class="login">
+                                <input type="submit" value="log in" class="button">
+					
+							</div>
+							<div class="forgot">
+								<a href="https://www.facebook.com/login/identify">Forgotten password?</a>
+							</div>
+							<div class="create-btn">
+								<a href="" class="button">Create New Account</a>
+							</div>
+						</form>
+						<p><a href="https://www.facebook.com/pages/create/?ref_type=registration_form">Create a Page</a> for a celebrity, band or business.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>
